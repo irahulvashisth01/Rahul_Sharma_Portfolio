@@ -34,7 +34,7 @@ body{
 
 nav{
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
     padding:20px 10%;
     background:rgba(255,255,255,0.05);
@@ -67,6 +67,64 @@ nav ul li a{
 
 nav ul li a:hover{
     color:#9b5cff;
+}
+
+/* Menu Button */
+
+.menu-btn{
+    display:none;
+    font-size:2rem;
+    cursor:pointer;
+    color:white;
+}
+
+/* Mobile Navbar */
+@media(max-width:900px){
+
+    nav{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        padding:15px 20px;
+        min-height:20px;
+        position:relative;
+    }
+
+    .logo{
+        font-size:1.2rem;
+        font-weight:700;
+        color:#9b5cff;
+    }
+
+    .menu-btn{
+        display:block;
+        font-size:2rem;
+        color:white;
+        cursor:pointer;
+        margin-left:auto;
+    }
+
+    nav ul{
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        background:#11113a;
+        flex-direction:column;
+        align-items:center;
+        max-height:0;
+        overflow:hidden;
+        transition:0.4s ease;
+    }
+
+    nav ul.active{
+        max-height:400px;
+        padding:20px 0;
+    }
+
+    nav ul li{
+        margin:15px 0;
+    }
 }
 
 /* Hero */
@@ -432,7 +490,18 @@ nav ul li{
         Rahul Sharma Portfolio
     </div>
 
-    
+    <div class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </div>
+
+    <ul id="navLinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
 </nav>
 <!-- Hero -->
