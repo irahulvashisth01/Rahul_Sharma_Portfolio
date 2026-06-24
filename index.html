@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rahul Sharma | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#05051d;
+    color:white;
+}
+
+/* Navbar */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:700;
+    color:#9b5cff;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:#9b5cff;
+}
+
+/* Hero */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 10%;
+}
+
+.left{
+    flex:1;
+}
+
+.left h1{
+    font-size:3.5rem;
+}
+
+.left h2{
+    margin-top:15px;
+    font-size:2rem;
+}
+
+.purple{
+    color:#9b5cff;
+}
+
+#element{
+    color:#9b5cff;
+}
+
+.left p{
+    margin-top:20px;
+    color:#d3d3d3;
+    line-height:1.8;
+}
+
+.buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    margin-right:15px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#9b5cff;
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    border:2px solid #9b5cff;
+    color:#9b5cff;
+}
+
+.btn-outline:hover{
+    background:#9b5cff;
+    color:white;
+}
+
+.right{
+    flex:1;
+    text-align:center;
+}
+
+.right img{
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #9b5cff;
+    box-shadow:0 0 30px rgba(155,92,255,0.6);
+    transition:0.4s;
+}
+
+.right img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 50px rgba(155,92,255,0.9);
+}
+
+/* Sections */
+
+section{
+    padding:80px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:40px;
+}
+
+/* About */
+
+.about p{
+    max-width:900px;
+    margin:auto;
+    line-height:1.9;
+    color:#d3d3d3;
+    text-align:center;
+}
+
+/* Skills */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:#11113a;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    transition:.3s;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 20px rgba(155,92,255,.4);
+}
+
+.skill-card h3{
+    color:#9b5cff;
+    margin-bottom:15px;
+}
+
+/* Projects */
+
+.project-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.project-card{
+    background:#11113a;
+    padding:30px;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.project-card:hover{
+    transform:translateY(-10px);
+}
+
+.project-card h3{
+    color:#9b5cff;
+    margin-bottom:15px;
+}
+
+.project-card p{
+    color:#d3d3d3;
+    line-height:1.7;
+}
+
+.project-buttons{
+    margin-top:20px;
+}
+
+/* Education */
+
+.education-card{
+    background:#11113a;
+    max-width:800px;
+    margin:20px auto;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+}
+
+/* Contact */
+
+.contact-card{
+    background:#11113a;
+    max-width:700px;
+    margin:auto;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.contact-card p{
+    margin:15px 0;
+}
+
+.social-links{
+    margin-top:20px;
+}
+
+.social-links a{
+    color:#9b5cff;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:600;
+}
+
+.social-links a:hover{
+    color:white;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#0a0a39;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+    padding-top:40px;
+}
+
+.left h1{
+    font-size:2.5rem;
+}
+
+.left h2{
+    font-size:1.5rem;
+}
+
+.right img{
+    width:100%;
+}
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:15px;
+}
+
+nav ul li{
+    margin:10px;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+<div class="logo">Rahul Sharma Portfolio</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="left">
+
+<h1>Hi, I'm <span class="purple">Rahul Sharma</span></h1>
+
+<h2>I'm a <span id="element"></span></h2>
+
+<p>
+Passionate B.Tech CSE Student and Full Stack Developer.
+I build modern websites, web applications and student-focused
+platforms using HTML, CSS, JavaScript, Python and Django.
+</p>
+
+
+
+<a href="#contact" class="btn btn-outline">Contact Me</a>
+</div>
+
+</div>
+
+<div class="right">
+<img src="bg.png" alt="Developer">
+</div>
+
+</section>
+
+<!-- About -->
+
+<section id="about" class="about">
+
+<h2>About Me</h2>
+
+<p>
+Hello! I'm Rahul Sharma, a passionate Computer Science Engineering student.
+I enjoy creating responsive websites, full-stack web applications, and solving
+real-world problems through technology.
+
+My technical skills include HTML, CSS, JavaScript, Python, Django, React,
+SQL, Git and GitHub. I am constantly learning new technologies and working on
+projects that improve students' learning experiences and productivity.
+
+My goal is to become a professional Full Stack Developer and contribute to
+innovative software solutions.
+</p>
+
+</section>
+
+<!-- Skills -->
+
+<section id="skills">
+
+<h2>My Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill-card">
+<h3>Frontend</h3>
+<p>HTML, CSS, JavaScript, React</p>
+</div>
+
+<div class="skill-card">
+<h3>Backend</h3>
+<p>Python, Django, Flask</p>
+</div>
+
+<div class="skill-card">
+<h3>Database</h3>
+<p>MySQL, SQLite, PostgreSQL</p>
+</div>
+
+<div class="skill-card">
+<h3>Tools</h3>
+<p>Git, GitHub, VS Code, Render</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+
+<h2>My Projects</h2>
+
+<div class="project-container">
+
+<div class="project-card">
+
+<h3>B.Tech Notes Platform</h3>
+
+<p>
+A complete notes sharing platform for engineering students
+with semester-wise notes, PYQs, premium notes and admin management.
+Built using Django and SQL.
+</p>
+
+<div class="project-buttons">
+<a href="https://btechnotes.online/" class="btn btn-primary">Live Demo</a>
+</div>
+
+</div>
+
+
+
+<div class="project-card">
+
+<h3>Random Password Generator</h3>
+
+<p>
+A web application developed using HTML, CSS and JavaScript
+that generates strong and secure passwords with one-click copy functionality.
+</p>
+
+<div class="project-buttons">
+<a href="#" class="btn btn-primary">Live Demo</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Education -->
+
+<section id="education">
+
+<h2>Education</h2>
+
+<div class="education-card">
+<h3>B.Tech Computer Science Engineering</h3>
+<p>NGF College of Engineering & Technology</p>
+<p>2024 - 2028</p>
+</div>
+
+<div class="education-card">
+<h3>Higher Secondary Education</h3>
+<p>HBSE Board</p>
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="contact-card">
+
+<p>📧 Email: rahulvashistha97@gmail.com</p>
+
+<p>📱 Phone: +91 7056212054</p>
+
+<p>📍 Haryana, India</p>
+
+<div class="social-links">
+<a href="https://github.com/irahulvashisth01">GitHub</a>
+<a href="https://www.linkedin.com/in/rahul-sharma-753879352/">LinkedIn</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+<p>© 2026 Rahul Sharma | All Right Reserved</p>
+
+</footer>
+
+<script>
+
+var typed = new Typed('#element', {
+strings: [
+'Full Stack Developer',
+'Python Developer',
+'Django Developer',
+'Web Developer'
+],
+typeSpeed:60,
+backSpeed:40,
+loop:true
+});
+
+</script>
+
+</body>
+</html>
